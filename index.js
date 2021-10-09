@@ -27,7 +27,7 @@ app.post("/getToken", function(req, res) {
   const channelName = channel;
   const uid = 0;
   const role = RtcRole.PUBLISHER;
-  const expirationTimeInSeconds = 3600
+  const expirationTimeInSeconds = 7200
   const currentTimestamp = Math.floor(Date.now() / 1000)
   const privilegeExpiredTs = currentTimestamp + expirationTimeInSeconds
 

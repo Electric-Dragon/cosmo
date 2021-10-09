@@ -7,6 +7,12 @@ var localTracks = {
     videoTrack: null,
     audioTrack: null
 };
+
+var localTrackState = {
+    videoTrackEnabled: true,
+    audioTrackEnabled: true
+  }
+
 var remoteUsers = {};
 
 var options = {
@@ -15,6 +21,8 @@ var options = {
     uid: null,
     token: null
 };
+
+mic, cam = true
 
 hideChat()
 
@@ -94,3 +102,45 @@ function showChat() {
 function hideChat() {
     $('.chat').hide()
 }
+
+function toggleMic() {
+    console.log(localTrackState.audioTrackEnabled);
+    if (localTrackState.audioTrackEnabled) {
+        muteAudio();
+    } else {
+        unmuteAudio();
+    }
+}
+
+function toggleCam() {
+    console.log(localTrackState.videoTrackEnabled);
+    if (localTrackState.videoTrackEnabled) {
+        muteVideo();
+    } else {
+        unmuteVideo();
+    }
+}
+
+async function muteAudio() {
+    if (!localTracks.audioTrack) return;
+    await localTracks.audioTrack.setEnabled(false);
+    localTrackState.audioTrackEnabled = false;
+  }
+  
+  async function muteVideo() {
+    if (!localTracks.videoTrack) return;
+    await localTracks.videoTrack.setEnabled(false);
+    localTrackState.videoTrackEnabled = false;
+  }
+  
+  async function unmuteAudio() {
+    if (!localTracks.audioTrack) return;
+    await localTracks.audioTrack.setEnabled(true);
+    localTrackState.audioTrackEnabled = true;
+  }
+  
+  async function unmuteVideo() {
+    if (!localTracks.videoTrack) return;
+    await localTracks.videoTrack.setEnabled(true);
+    localTrackState.videoTrackEnabled = true;
+  }
