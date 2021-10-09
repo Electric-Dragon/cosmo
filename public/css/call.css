@@ -1,6 +1,7 @@
 body{
-    background-color: #6E4E52;
+    background-color: #21242C;
     max-width: 100%;
+    max-height: 100%;
 }
 html{
     margin: 0;
@@ -8,19 +9,20 @@ html{
 }
 .header{
     display: flex;
-    flex-direction: row;
+
     margin-left: 2%;
     align-items: center;
 
 }
 .menu{
-    margin-right: auto;
+    margin-left: auto;
 }
 
 .room{
     font-size: 1.2rem;
     font-family: 'Cubano', sans-serif;
     font-weight: 100;
+    color: white;
 }
 
 /* Edit button */
@@ -43,34 +45,56 @@ html{
 
 /* Hero */
 
+.info{
+    display: flex;
+}
+
+.invite{
+    width:9rem;
+    height:3rem;
+    background: #6BC5A2;
+    border-radius: 15px;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    float: right;
+    font-family: 'Sofia Pro', sans-serif;
+    margin-left: auto;
+}
+
+.invite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .group{
     display: grid;
-    grid-template-columns: 72% 25%;
+    grid-template-columns: 77% 25%;
     height: 100%;
 }
 .ppl{
-    background-color: #21242C;
-
-    margin-left: 0 !important;
-    padding: 0;
+    background-color: #191B1F;
     border-radius: 0px 20px 0px 0px;
+}
 
-
+.content{
+    max-height: 100vh;
 }
 
 .menu{
     background-color: aliceblue;
-    padding: 0;
+    max-height: 100vh;
+    width: auto;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-gap: 20px;
-    padding: 2rem;
+    grid-gap: 2.5px;
+    padding: 1rem;
     justify-content: center;
-  }
+}
   .video {
     background: whitesmoke;
     display: flex;
@@ -91,7 +115,8 @@ html{
     gap: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
+    margin-top: 5%;
 
 }
 
@@ -100,6 +125,7 @@ html{
     height: 60px;
     border: 1px solid #FFFFFF;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .button2{
@@ -109,6 +135,8 @@ background: #EF5A5D;
 border-radius: 15px;
 font-family: 'Sofia Pro', sans-serif;
 text-align: center;
+font-size: 1.5rem;
+cursor: pointer;
 
 }
 
@@ -138,4 +166,55 @@ text-align: center;
         border: 1px solid #FFFFFF;
         border-radius: 15px;
     }
-  }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-gap: 5px;
+        padding: 1rem;
+    }
+
+    .group{
+        grid-template-columns: 1fr;
+        right: 1%;
+    }
+    .menu{
+        display: block;
+        visibility: hidden;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    html{
+        font-size: 180%;
+    }
+    .controls{
+        gap: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .button{
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #FFFFFF;
+        border-radius: 15px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr ;
+        grid-gap: 5px;
+        padding: 1rem;
+    }
+
+    .group{
+        grid-template-columns: 1fr;
+        right: 1%;
+    }
+    .menu{
+        display: block;
+        visibility: hidden;
+    }
+
+}
