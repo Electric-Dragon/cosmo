@@ -1,0 +1,141 @@
+body{
+    background-color: #6E4E52;
+    max-width: 100%;
+}
+html{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    margin-left: 2%;
+    align-items: center;
+
+}
+.menu{
+    margin-right: auto;
+}
+
+.room{
+    font-size: 1.2rem;
+    font-family: 'Cubano', sans-serif;
+    font-weight: 100;
+}
+
+/* Edit button */
+.change{
+    margin: 0;
+    margin-left: 5%;
+    width: 104px;
+    height: 35px;
+    background-color: #2983FB;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sofia Pro', sans-serif;
+                                                
+}
+
+/* Hero */
+
+.group{
+    display: grid;
+    grid-template-columns: 72% 25%;
+    height: 100%;
+}
+.ppl{
+    background-color: #21242C;
+
+    margin-left: 0 !important;
+    padding: 0;
+    border-radius: 0px 20px 0px 0px;
+
+
+}
+
+.menu{
+    background-color: aliceblue;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    padding: 2rem;
+    justify-content: center;
+  }
+  .video {
+    background: whitesmoke;
+    display: flex;
+    justify-content: center;
+  }
+  .video:before {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    padding-bottom: calc(9/16 * 100%);
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 5%;
+
+}
+
+.button{
+    width: 60px;
+    height: 60px;
+    border: 1px solid #FFFFFF;
+    border-radius: 15px;
+}
+
+.button2{
+    width: 12rem;
+height: 3.5rem;
+background: #EF5A5D;
+border-radius: 15px;
+font-family: 'Sofia Pro', sans-serif;
+text-align: center;
+
+}
+
+.button svg{
+    color: aliceblue;
+    position: relative;
+    top: 55%;
+    margin-top: -50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    width: 100%;
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .controls{
+        gap: 0.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .button{
+        width: 3rem;
+        height: 3rem;
+        border: 1px solid #FFFFFF;
+        border-radius: 15px;
+    }
+  }
