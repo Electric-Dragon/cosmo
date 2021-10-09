@@ -33,7 +33,7 @@ app.post("/getToken", function(req, res) {
 
   const token = RtcTokenBuilder.buildTokenWithUid(appID, appCertificate, channelName, uid, role, privilegeExpiredTs);
 
-  res.json({token: token})
+  res.json({token: token, appID: process.env.APP_ID})
   
 });
 
