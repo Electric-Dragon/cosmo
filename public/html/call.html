@@ -84,13 +84,30 @@ Inspired by https://dribbble.com/supahfunk
       <div class="messages-content"></div>
     </div>
     <div class="message-box">
-      <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
-      <button type="submit" class="message-submit">Send</button>
+      <textarea type="text" class="message-input" placeholder="Type message..." id="message"></textarea>
+      <button type="submit" class="message-submit" onclick="sendMessage()">Send</button>
     </div>
   </div>
     </div>
     </div>
-    
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyAAkL7Qt1_uQcmx3I37hSB5zNt90IAnjbk",
+          authDomain: "cosmo-69.firebaseapp.com",
+          projectId: "cosmo-69",
+          storageBucket: "cosmo-69.appspot.com",
+          messagingSenderId: "480850865813",
+          appId: "1:480850865813:web:4dca556a03b9d4a0d6b59c",
+          measurementId: "G-8KLL1CNC5W"
+        };
+        const app = initializeApp(firebaseConfig);
+      </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="/js/AgoraRTC_N-4.7.1.js"></script>
     <script src="/js/call.js"></script>

@@ -22,9 +22,18 @@ var options = {
     token: null
 };
 
-mic, cam = true
-
 hideChat()
+
+var userSignedIn = false;
+var username = null;
+var db = firebase.firestore();
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+      userSignedIn = true;
+      username = user.displayName;
+    }
+});
 
 $.ajax({
     type: "POST",
@@ -144,3 +153,24 @@ async function muteAudio() {
     await localTracks.videoTrack.setEnabled(true);
     localTrackState.videoTrackEnabled = true;
   }
+
+function sendMessage() {
+    if (!userSignedIn) {
+        Swal.fire({
+            title: 'Error!',
+            text: 'You need to sign in to send a message!',
+            icon: 'error'
+        })
+        return;
+    }
+    var message = $('#message').val().trim()
+    if (!message === '') {
+        var data = {
+            message: message,
+            sender: username,
+            timestamp: firebase.database.ServerValue.TIMESTAMP
+        }
+        db.collection('Channels').doc(channel).collection('messages').add(data)
+    }
+
+}
