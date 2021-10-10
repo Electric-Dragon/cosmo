@@ -1,10 +1,11 @@
+const { v4: uuidv4 } = require('uuid');
 require('dotenv').config()
 const express = require("express");
 const https = require("https");
 const path = require('path');
 const app = express();
 const port = 5050;
-const {RtcTokenBuilder, RtmTokenBuilder, RtcRole, RtmRole} = require('agora-access-token')
+const {RtcTokenBuilder, RtcRole} = require('agora-access-token')
 
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(express.urlencoded({extended:true}));
@@ -12,7 +13,6 @@ app.use(express.urlencoded({extended:true}));
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/html/home.html");
-  // res.redirect('/call/123')
 });
 
 app.get("/call/:channel", function(req, res) {
@@ -39,6 +39,11 @@ app.post("/getToken", function(req, res) {
 
   res.json({token: token, appID: process.env.APP_ID})
   
+});
+
+app.get("/create", function(req, res) {
+  var uuid = uuidv4();
+  res.redirect(`/call/${uuid}`)
 });
 
 app.listen(process.env.PORT || port, function() {
