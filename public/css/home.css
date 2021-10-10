@@ -28,7 +28,8 @@ nav{
     top: 4%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 578px);
+    grid-template-rows: repeat(3, 100vh);
+    max-height:100vh ;
 }
 
 .squares{
