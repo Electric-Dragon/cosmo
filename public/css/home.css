@@ -3,6 +3,7 @@
     max-width: 100%;
     max-height: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 html{
@@ -16,19 +17,31 @@ h1{
     font-size: 3rem;
     text-align: center;
 }
-
+ul{
+  gap: 2rem;
+}
+.nav-item{
+  margin-right: 5%;
+  width: 7rem !important;
+}
 
 nav{
     font-family: 'Cubano', sans-serif !important;
     height: 9%;
-    font-size: 1.5rem;
+
+  padding-right: 5%;
+  padding-left: 3%;
+}
+
+.navbar-brand{
+  font-family: 'Bungee', cursive;  outline: black;
+  font-size: 2rem;
 }
 
 .grid{
-    top: 4%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 100vh);
+    grid-template-rows: repeat(1, 100vh);
     max-height:100vh ;
 }
 
