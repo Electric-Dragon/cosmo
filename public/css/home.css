@@ -14,6 +14,7 @@ h1{
     font-family: 'Cubano', sans-serif !important;
     color: black;
     font-size: 3rem;
+    text-align: center;
 }
 
 
@@ -31,13 +32,10 @@ nav{
 }
 
 .squares{
-    display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
-    padding: 2%;
+    flex-direction: column;
 }
 
 
@@ -49,7 +47,7 @@ nav{
     display: inline-flex;
     width: 180px;
     height: 55px;
-    margin: 0 15px;
+    margin:0;
     perspective: 1000px;
   }
   .btn a{
@@ -95,8 +93,9 @@ nav{
     position: relative;
     display: inline-flex;
     width: 180px;
-    height: 25px;
-    margin: 0 15px;
+    height: 55px;
+    margin-top:3%;
+    margin-top:3%;
     perspective: 1000px;
   }
   .btnb a{
@@ -134,11 +133,51 @@ nav{
   .btnb a:hover{
     transform: translateZ(-25px) rotateX(-90deg);
   }
-  
+  .g{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 20%;
+  }
 
-  @media screen and (max-width: 600px) {
+@media screen and (max-width: 820px) {
       .grid{
           grid-template-columns: 1fr;
           grid-template-rows: repeat(6, 578px);
       }
-  }
+      .g{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          gap: 10%;
+      }
+    }
+
+@media screen and (max-width: 500px) {
+    .g{
+        display: grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: 1fr 1fr;
+        gap: 30%;
+        margin-top: 10%;
+    }
+
+    .btn{
+        right: 6.8%;
+    }
+
+
+}
+
+@media screen and (min-width: 1900px) {
+    html{
+        font-size: 180%;
+    }
+    .grid{
+        height: 100%;
+        padding-top: 8%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(3, 578px);
+    }
+
+
+}
