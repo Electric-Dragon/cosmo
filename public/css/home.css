@@ -139,6 +139,54 @@ nav{
       padding-top: 20%;
   }
 
+  .sixth {
+    border-radius: 3em;
+    border-color: #EA3352;
+    color:black;
+    background-image: -webkit-linear-gradient(top, transparent 50%, #EA3352 50%);
+    background-image: linear-gradient(to bottom, transparent 50%, #EA3352 50%);
+    background-position: 0% 0%;
+    background-size: 210%;
+    -webkit-transition: background 150ms ease-in-out, color 150ms ease-in-out;
+    transition: background 150ms ease-in-out, color 150ms ease-in-out;
+    text-align: center;
+  }
+  .sixth:hover {
+    color: #fff;
+    background-position: 0 100%;
+  }
+  
+.clk{
+ 
+
+  border-radius: 0.6em;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Sofia Pro', sans-serif;
+  font-weight: 700;
+  border-color: #EA3352;
+}
+
+.btn:hover, .btn:focus {
+  color: #fff;
+  outline: 0;
+}
+
+  
 @media screen and (max-width: 820px) {
       .grid{
           grid-template-columns: 1fr;
