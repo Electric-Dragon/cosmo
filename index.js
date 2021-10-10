@@ -10,6 +10,8 @@ const {RtcTokenBuilder, RtcRole} = require('agora-access-token')
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(express.urlencoded({extended:true}));
 
+var email = process.env.EMAIL
+var password = process.env.PASSWORD
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/html/home.html");

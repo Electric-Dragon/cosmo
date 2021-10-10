@@ -1,3 +1,6 @@
+$('#micOff').hide()
+$('#camOff').hide()
+
 var pathArray = window.location.pathname.split( '/' );
 var channel = pathArray.pop()
 
@@ -115,8 +118,12 @@ function hideChat() {
 function toggleMic() {
     console.log(localTrackState.audioTrackEnabled);
     if (localTrackState.audioTrackEnabled) {
+        $('#micOff').show()
+        $('#micOn').hide()
         muteAudio();
     } else {
+        $('#micOff').hide()
+        $('#micOn').show()
         unmuteAudio();
     }
 }
@@ -124,8 +131,12 @@ function toggleMic() {
 function toggleCam() {
     console.log(localTrackState.videoTrackEnabled);
     if (localTrackState.videoTrackEnabled) {
+        $('#camOff').show()
+        $('#camOn').hide()
         muteVideo();
     } else {
+        $('#camOff').hide()
+        $('#camOn').show()
         unmuteVideo();
     }
 }
