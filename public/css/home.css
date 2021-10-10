@@ -6,8 +6,8 @@
 }
 
 html{
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 h1{
@@ -19,19 +19,126 @@ h1{
 
 nav{
     font-family: 'Cubano', sans-serif !important;
+    height: 9%;
+    font-size: 1.5rem;
 }
 
 .grid{
+    top: 4%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 578px);
 }
 
 .squares{
-    height: auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
 }
 
-.squares-1{
-    background-color: #10B665;
+
+
+/* button */
+
+.btn{
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+  }
+  .btn a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'sofia pro', sans-serif;
+    
+  }
+ .btn a:before,
+  .btn a:after{
+    position: absolute;
+    content: "JOIN";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
 }
 
+  .btn a:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  .btn a:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  .btn a:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+  
+
+/* button */
+
+.btnb{
+    position: relative;
+    display: inline-flex;
+    width: 180px;
+    height: 25px;
+    margin: 0 15px;
+    perspective: 1000px;
+  }
+  .btnb a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'sofia pro', sans-serif;
+    
+  }
+ .btnb a:before,
+  .btnb a:after{
+    position: absolute;
+    content: "CREATE";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+  .btnb a:before{
+    color: #fff;
+    background: #000;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  .btnb a:after{
+    color: #000;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  .btnb a:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+  
+
+  @media screen and (max-width: 600px) {
+      .grid{
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(6, 578px);
+      }
+  }
