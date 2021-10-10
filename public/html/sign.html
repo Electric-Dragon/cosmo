@@ -7,51 +7,51 @@
     <link rel="stylesheet" href="/css/sign.css">
     <link href="http://fonts.cdnfonts.com/css/cubano" rel="stylesheet">
     <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet">  
-    <title>Cosmo|sign</title>
+    <title>Cosmo | Sign</title>
 </head>
 <body>
     
     <div class="form">
         <div class="container" id="container">
             <div class="form-container sign-up-container">
-                <form action="#">
+                <form>
                     <h1>Create Account</h1>
-                    <div class="social-container">
+                    <!-- <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-google-plus-g"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
                             <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
                           </svg></i></a>
-                    </div>
+                    </div> -->
                     <span>or use your email for registration</span>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <button>Sign Up</button>
+                    <input type="text" placeholder="Name" id="signUpName" required/>
+                    <input type="email" placeholder="Email" id="signUpEmail" required/>
+                    <input type="password" placeholder="Password" id="signUpPassword" required/>
+                    <button onclick="signUp()" type="button">Sign Up</button>
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form action="#">
+                <form>
                     <h1>Sign in</h1>
-                    <div class="social-container">
+                    <!-- <div class="social-container">
                         <a href="#" class="social"><i class="fab fa-google-plus-g"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google" viewBox="0 0 16 16">
                             <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
                           </svg></i></a>
-                    </div>
+                    </div> -->
                     <span>or use your account</span>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
-                    <a href="#">Forgot your password?</a>
-                    <button>Sign In</button>
+                    <input type="email" placeholder="Email" id="loginEmail"/>
+                    <input type="password" placeholder="Password" id="loginPassword"/>
+                    <a href="/changePassword">Forgot your password?</a>
+                    <button onclick="login()" type="button">Sign In</button>
                 </form>
             </div>
             <div class="overlay-container">
                 <div class="overlay">
                     <div class="overlay-panel overlay-left">
-                        <h1>Have an Account!</h1>
+                        <h1>Have an Account?</h1>
                         <p>Please click this to switch to Sign In</p>
                         <button class="ghost" id="signIn">Sign In</button>
                     </div>
                     <div class="overlay-panel overlay-right">
-                        <h1>Are You A Newcomer!</h1>
+                        <h1>Are You A Newcomer?</h1>
                         <p>Click this to switch to Create Account</p>
                         <button class="ghost" id="signUp">Sign Up</button>
                     </div>
@@ -63,20 +63,40 @@
 
     </div>
 
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+    
+    signUpButton.addEventListener('click', () => {
+        container.classList.add("right-panel-active");
+    });
+    
+    signInButton.addEventListener('click', () => {
+        container.classList.remove("right-panel-active");
+    });
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyAAkL7Qt1_uQcmx3I37hSB5zNt90IAnjbk",
+        authDomain: "cosmo-69.firebaseapp.com",
+        projectId: "cosmo-69",
+        storageBucket: "cosmo-69.appspot.com",
+        messagingSenderId: "480850865813",
+        appId: "1:480850865813:web:4dca556a03b9d4a0d6b59c",
+        measurementId: "G-8KLL1CNC5W"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/sign.js"></script>
 
 </body>
 
-<script>
-    const signUpButton = document.getElementById('signUp');
-const signInButton = document.getElementById('signIn');
-const container = document.getElementById('container');
-
-signUpButton.addEventListener('click', () => {
-	container.classList.add("right-panel-active");
-});
-
-signInButton.addEventListener('click', () => {
-	container.classList.remove("right-panel-active");
-});
-</script>
 </html>
