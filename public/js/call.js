@@ -4,6 +4,8 @@ $('#camOff').hide()
 var pathArray = window.location.pathname.split( '/' );
 var channel = pathArray.pop()
 
+$('#code').html(`Meeting Code: <strong>${channel}</strong>`)
+
 var client = AgoraRTC.createClient({ mode: "rtc", codec: "vp8" });
 
 var localTracks = {
