@@ -160,7 +160,7 @@ function sendMessage() {
             title: 'Error!',
             text: 'You need to sign in to send a message!',
             icon: 'error'
-        })
+        });
         return;
     }
     var message = $('#message').val().trim()
@@ -173,4 +173,17 @@ function sendMessage() {
         db.collection('Channels').doc(channel).collection('messages').add(data)
     }
 
+}
+
+function invite() {
+
+  $('#inviteLink').val(window.location)
+  $('#inviteLink').focus()
+  $('#inviteLink').select()
+  document.execCommand('copy')
+  Swal.fire({
+    title: 'Success',
+    text: 'Copied to clipboard',
+    icon: 'success'
+  })
 }
