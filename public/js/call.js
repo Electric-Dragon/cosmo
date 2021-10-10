@@ -177,13 +177,14 @@ function sendMessage() {
     }
     var message = $('#message').val().trim()
     if (message !== '') {
+        var date = new Date()
         var data = {
             message: message,
             sender: username,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            timestamp: date
         }
         db.collection('Channels').doc(channel).collection('messages').add(data).then(() => {$('#message').val('')});
-        db.collection('Channels').doc(channel).set({timestamp: firebase.firestore.FieldValue.serverTimestamp()})
+        db.collection('Channels').doc(channel).set({timestamp: date})
     }
 
 }
