@@ -1,0 +1,30 @@
+.body{
+    background-color: #21242C;
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+}
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+
+nav{
+    font-family: 'Cubano', sans-serif !important;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 578px);
+}
+
+.squares{
+    height: auto;
+}
+
+.squares-1{
+    background-color: #10B665;
+}

@@ -26,14 +26,14 @@ hideChat()
 
 var userSignedIn = false;
 var username = null;
-var db = firebase.firestore();
+// var db = firebase.firestore();
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      userSignedIn = true;
-      username = user.displayName;
-    }
-});
+// firebase.auth().onAuthStateChanged((user) => {
+//     if (user) {
+//       userSignedIn = true;
+//       username = user.displayName;
+//     }
+// });
 
 $.ajax({
     type: "POST",
