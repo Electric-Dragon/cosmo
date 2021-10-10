@@ -94,14 +94,15 @@ html{
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr; 
+     grid-template-rows: 1fr;
     grid-gap: 2.5px;
     padding: 1rem;
     justify-content: center;
 }
+
   .video {
-    background: whitesmoke;
+    background:transparent;
     display: flex;
     justify-content: center;
   }
