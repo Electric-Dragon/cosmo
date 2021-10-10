@@ -171,9 +171,8 @@ function sendMessage() {
             sender: username,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }
-        db.collection('Channels').doc(channel).collection('messages').add(data).then(() => {console.log('success sent message');}).catch((err) => {
-          console.log(err);
-        })
+        db.collection('Channels').doc(channel).collection('messages').add(data).then(() => {$('#message').val('')});
+        db.collection('Channels').doc(channel).set({timestamp: firebase.firestore.FieldValue.serverTimestamp()})
     }
 
 }
@@ -193,3 +192,23 @@ function invite() {
     timerProgressBar: true,
   })
 }
+
+db.collection("Channels").doc(channel).collection('messages').orderBy("timestamp")
+    .onSnapshot((querySnapshot) => {
+        var messages = [];
+        querySnapshot.forEach((doc) => {
+            messages.push(doc.data());
+        });
+        messages.forEach((message) => {
+
+          var element = $(`<div class="message"><h5>${message.sender}: ${message.message}</h5></div>`)
+          $('#content').append(element)
+
+        })
+});
+
+$('#message').on('keydown', function(e) {
+  if (e.key === 'Enter') {
+    sendMessage()
+  }
+})
