@@ -155,6 +155,7 @@ async function muteAudio() {
   }
 
 function sendMessage() {
+
     if (!userSignedIn) {
         Swal.fire({
             title: 'Error!',
@@ -164,10 +165,11 @@ function sendMessage() {
         return;
     }
     var message = $('#message').val().trim()
-    if (!message === '') {
+    if (message !== '') {
         var data = {
             message: message,
-            sender: username
+            sender: username,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }
         db.collection('Channels').doc(channel).collection('messages').add(data).then(() => {console.log('success sent message');}).catch((err) => {
           console.log(err);
