@@ -221,8 +221,8 @@ cursor: pointer;
     .ppl{
         margin-top: 10%;
     }
+  }
 
-}
 
 
 /* Chat popup */
@@ -523,14 +523,10 @@ Custom Srollbar
 .avenue-messenger {
   opacity: 1;
   border-radius: 20px;
-  height: calc(100% - 60px) !important;
-  max-height: 460px !important;
-  min-height: 220px !important;
+  height: calc(100% - 60px) ;
+  max-height: 450px ;
+  min-height: 180px;
   width: 320px;
-  /*  transform: translateY(0);
-    -webkit-transform: translateY(0);
-    -moz-transform: translateY(0);
-  */
   background: rgba(255, 255, 255, 0.9);
   position: fixed;
   right: 20px;
@@ -559,14 +555,6 @@ Custom Srollbar
   font-size: 14px;
   color: #232323;
 }
-
-
-
-
-
-
-
-
 
 .menu .button {
   z-index: 12;
@@ -637,3 +625,4 @@ Custom Srollbar
     -moz-box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
   }
 }
+
