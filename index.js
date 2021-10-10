@@ -10,7 +10,6 @@ const {RtcTokenBuilder, RtcRole} = require('agora-access-token')
 app.use(express.static(path.join(__dirname + '/public')));
 app.use(express.urlencoded({extended:true}));
 
-
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/html/home.html");
 });
@@ -21,10 +20,6 @@ app.get("/404", function(req, res) {
 
 app.get("/call/:channel", function(req, res) {
   res.sendFile(__dirname + "/public/html/call.html");
-});
-
-app.get("/home", function(req, res) {
-  res.sendFile(__dirname + "/public/html/home.html");
 });
 
 app.get("/sign", function(req, res) {
@@ -53,6 +48,10 @@ app.get("/create", function(req, res) {
   var uuid = uuidv4();
   res.redirect(`/call/${uuid}`)
 });
+
+app.use(function(req, res, next) {
+  res.redirect('/404');
+}); 
 
 app.listen(process.env.PORT || port, function() {
     console.log(`Server started on http://localhost:${port}`);

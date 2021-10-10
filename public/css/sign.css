@@ -11,6 +11,12 @@ body {
 	height: 100vh;
 	margin: -20px 0 50px;
 }
+html{
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+
+}
 
 h1 {
 	font-weight: bold;
@@ -246,3 +252,4 @@ footer a {
     color: #3c97bf;
     text-decoration: none;
 }
+

@@ -9,6 +9,8 @@
 html{
     margin: 0 !important;
     padding: 0 !important;
+    font-family: 'Poppins', sans-serif !important;
+
 }
 
 h1{
@@ -16,6 +18,7 @@ h1{
     color: black;
     font-size: 3rem;
     text-align: center;
+    font-weight: 600;
 }
 ul{
   gap: 2rem;
