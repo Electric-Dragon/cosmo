@@ -167,10 +167,11 @@ function sendMessage() {
     if (!message === '') {
         var data = {
             message: message,
-            sender: username,
-            timestamp: firebase.database.ServerValue.TIMESTAMP
+            sender: username
         }
-        db.collection('Channels').doc(channel).collection('messages').add(data)
+        db.collection('Channels').doc(channel).collection('messages').add(data).then(() => {console.log('success sent message');}).catch((err) => {
+          console.log(err);
+        })
     }
 
 }
