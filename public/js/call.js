@@ -193,16 +193,23 @@ function invite() {
   })
 }
 
+var messagesDone = []
+
 db.collection("Channels").doc(channel).collection('messages').orderBy("timestamp")
-    .onSnapshot((querySnapshot) => {
+.onSnapshot((querySnapshot) => {
         var messages = [];
+        var ids = []
         querySnapshot.forEach((doc) => {
-            messages.push(doc.data());
+          messages.push(doc.data());
+          ids.push(doc.id)
         });
         messages.forEach((message) => {
-
-          var element = $(`<div class="message"><h5>${message.sender}: ${message.message}</h5></div>`)
-          $('#content').append(element)
+          var index = messages.indexOf(message)
+          if (!messagesDone.includes(ids[index])) {
+            var element = $(`<div class="message" id=><h5>${message.sender}: ${message.message}</h5></div>`)
+            $('#content').append(element)
+            messagesDone.push(ids[index])
+          }
 
         })
 });
