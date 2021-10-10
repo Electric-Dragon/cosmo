@@ -183,6 +183,7 @@ function invite() {
   $('#inviteLink').focus()
   $('#inviteLink').select()
   document.execCommand('copy')
+  $('#inviteLink').blur()
   Swal.fire({
     position: 'bottom-left',
     icon: 'success',
