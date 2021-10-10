@@ -31,9 +31,6 @@
                         </div>
                         <div class="grid">
                             <div id="local-player" class="video-placeholder video"></div>
-                            <div id="local-player" class="video-placeholder video"></div>
-                            <div id="local-player" class="video-placeholder video"></div>
-                            <div id="local-player" class="video-placeholder video"></div>
 
                         </div>
                         <div class="controls">
@@ -109,7 +106,7 @@ Inspired by https://dribbble.com/supahfunk
           appId: "1:480850865813:web:4dca556a03b9d4a0d6b59c",
           measurementId: "G-8KLL1CNC5W"
         };
-        const app = initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
       </script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>

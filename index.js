@@ -11,8 +11,8 @@ app.use(express.urlencoded({extended:true}));
 
 
 app.get("/", function(req, res) {
-  // res.sendFile(__dirname + "/public/html/home.html");
-  res.redirect('/call/123')
+  res.sendFile(__dirname + "/public/html/home.html");
+  // res.redirect('/call/123')
 });
 
 app.get("/call/:channel", function(req, res) {
