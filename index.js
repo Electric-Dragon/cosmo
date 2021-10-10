@@ -23,6 +23,11 @@ app.get("/home", function(req, res) {
   res.sendFile(__dirname + "/public/html/home.html");
 });
 
+app.get("/sign", function(req, res) {
+  res.sendFile(__dirname + "/public/html/sign.html");
+});
+
+
 app.post("/getToken", function(req, res) {
   var channel = req.body.channel
 

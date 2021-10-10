@@ -182,8 +182,11 @@ function invite() {
   $('#inviteLink').select()
   document.execCommand('copy')
   Swal.fire({
-    title: 'Success',
-    text: 'Copied to clipboard',
-    icon: 'success'
+    position: 'bottom-left',
+    icon: 'success',
+    title: 'Copied to Clipboard',
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
   })
 }
