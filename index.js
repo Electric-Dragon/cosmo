@@ -18,6 +18,10 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/html/home.html");
 });
 
+app.get("/404", function(req, res) {
+  res.sendFile(__dirname + "/public/html/404.html");
+});
+
 app.get("/call/:channel", function(req, res) {
   res.sendFile(__dirname + "/public/html/call.html");
 });

@@ -232,12 +232,12 @@ nav{
     html{
         font-size: 180%;
     }
-    .grid{
+    /* .grid{
         height: 100%;
         padding-top: 8%;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: repeat(3, 578px);
-    }
+    } */
 
 
 }
