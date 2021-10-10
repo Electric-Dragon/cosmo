@@ -10,6 +10,12 @@ html{
     padding: 0;
 }
 
+h1{
+    font-family: 'Cubano', sans-serif !important;
+    color: black;
+    font-size: 3rem;
+}
+
 
 nav{
     font-family: 'Cubano', sans-serif !important;
@@ -28,3 +34,4 @@ nav{
 .squares-1{
     background-color: #10B665;
 }
+
