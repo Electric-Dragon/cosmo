@@ -29,8 +29,8 @@ ul{
 }
 
 nav{
-    font-family: 'Cubano', sans-serif !important;
-    height: 9%;
+  font-family: 'Poppins', sans-serif !important;
+  height: 9%;
 
   padding-right: 5%;
   padding-left: 3%;
@@ -73,7 +73,7 @@ nav{
     transform-style: preserve-3d;
     transform: translateZ(-25px);
     transition: transform .25s;
-    font-family: 'sofia pro', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     
   }
  .btn a:before,
@@ -121,7 +121,7 @@ nav{
     transform-style: preserve-3d;
     transform: translateZ(-25px);
     transition: transform .25s;
-    font-family: 'sofia pro', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
     
   }
  .btnb a:before,
@@ -191,7 +191,7 @@ nav{
   text-decoration: none;
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Sofia Pro', sans-serif;
+  font-family: 'Poppins', sans-serif !important;
   font-weight: 700;
   border-color: #EA3352;
 }

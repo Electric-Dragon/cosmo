@@ -7,7 +7,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: 'Sofia Pro', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
 }
@@ -80,6 +79,7 @@ form {
 	flex-direction: column;
 	padding: 0 50px;
 	height: 100%;
+	
 	text-align: center;
 }
 
